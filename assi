@@ -1,0 +1,208 @@
+# q-3.Enlist any 5 inbuilt funcions that can be called using array variables,give the syntax of each.
+
+1. array_push() - Syntax: array_push(array, value1, value2, ...);
+
+2. array_pop() - Syntax: array_pop(array);
+
+3. array_shift() - Syntax: array_shift(array);
+
+4. array_unshift() - Syntax: array_unshift(array, value1, value2, ...);
+
+5. array_reverse() - Syntax: array_reverse(array);
+....................................................................................................
+# q-4File Handling in PHP is the process of dealing with files on the server. It allows you to read, write, and modify files on the server. The different modes of opening file are:
+
+- Read Mode (r): This mode allows you to read the file.
+- Write Mode (w): This mode allows you to write or modify the file. 
+- Append Mode (a): This mode allows you to append data to the end of the file.
+- Binary Mode (b): This mode allows you to read or write a file in a binary format. 
+- Read/Write Mode (r+): This mode allows you to read and write the data in the file. 
+- Write/Read Mode (w+): This mode allows you to write and read the data in the file. 
+- Append/Read Mode (a+): This mode allows you to append and read the data in the file.
+..........................................................................................................
+# q-6.write a programme in php that displays thje content of a file on a browser?
+
+<?php
+  //Open the file
+  $file = fopen("my_file.txt", "r") or die("Unable to open file!");
+
+  //Read the file
+  while(!feof($file)) {
+    echo fgets($file) . "<br>";
+  }
+
+  //Close the file
+  fclose($file);
+?>
+............................................................................................................
+# q-7 write a programme in php that helps you to write the content entered buy user in the file stored on server?
+
+<?php
+//Check if the form is submitted
+if (isset($_POST['submit'])) {
+  //Retrieve the content entered by the user
+  $content = $_POST['content'];
+  
+  //Open the file in write mode
+  $file = fopen('file.txt', 'w');
+  
+  //Write the content in the file
+  fwrite($file, $content);
+  
+  //Close the file
+  fclose($file);
+  
+  //Success Alert
+  echo "Content written successfully!";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Write Content to File</title>
+</head>
+<body>
+  <form method="post" action="">
+    <textarea name="content" placeholder="Enter content to write in file"></textarea>
+    <input type="submit" name="submit" value="Write Content">
+  </form>
+</body>
+</html>
+.........................................................................................
+# q-8.what do you mean by object oriented programming.what are the charactersƟcs if object oriented programming.explain briefly?
+
+Object-oriented programming (OOP) is a programming paradigm based on the concept of objects, which can contain data, in the form of fields (often known as attributes or properties), and code, in the form of procedures (often known as methods). A feature of objects is that an object's procedures can access and often modify the data fields of the object with which they are associated.
+
+The characteristics of OOP are:
+
+1. Encapsulation: Encapsulation is the mechanism of wrapping up the data and methods that operate on the data into a single unit.
+
+2. Abstraction: Abstraction is the process of hiding the implementation details from the user and only showing them the essential features of a system.
+
+3. Inheritance: Inheritance is the ability for an object to inherit the properties and methods of another object.
+
+4. Polymorphism: Polymorphism is the ability of an object to take the form of another object.
+...............................................................................................................
+# q-16
+differenƟate between html and xml or what are the chractersƟcs of 
+xml?what is well formed xml document?create an xml document that stores 
+the data of five employes in it?
+
+HTML vs XML
+
+HTML:
+HTML stands for HyperText Markup Language, and is a standard markup language used to create webpages. HTML is used to structure and present content on the web, and is written in the form of HTML elements which consist of tags surrounded by angle brackets.
+HTML is a static language and does not allow for much flexibility or interactivity. It is not extensible, and does not provide any data validation.
+
+XML:
+XML stands for Extensible Markup Language, and is a markup language designed to store and transport data. XML is used to define the structure of data, and is designed to be both human- and machine-readable. XML is extensible, and can be used to create self-describing documents which can be easily parsed and understood.
+
+Characteristics of XML:
+1. XML is self-describing, meaning that the structure of data is described in the document itself.
+2. XML is extensible, meaning that new elements can be added to the document as needed.
+3. XML is human-readable, meaning that the data can be easily read and understood by humans.
+4. XML is machine-readable, meaning that the document can be easily parsed and understood by computers.
+5. XML is platform-independent, meaning that the document can be used on any platform or operating system.
+6. XML is structured, meaning that the data is organized in a hierarchical structure.
+7. XML is validatable, meaning that the document can be checked for errors and validity.
+
+Well-Formed XML Document:
+A well-formed XML document is a document that meets the rules of the XML syntax. A well-formed XML document must have a single root element, all elements must be properly nested, all attribute values must be quoted, and all elements must be closed.
+
+Example XML Document:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Employees>
+    <Employee>
+        <Name>John Smith</Name>
+        <Age>30</Age>
+        <Position>Manager</Position>
+    </Employee>
+    <Employee>
+        <Name>Jane Doe</Name>
+        <Age>27</Age>
+        <Position>Developer</Position>
+    </Employee>
+    <Employee>
+        <Name>John Doe</Name>
+        <Age>25</Age>
+        <Position>Designer</Position>
+    </Employee>
+    <Employee>
+        <Name>Bob Smith</Name>
+        <Age>28</Age>
+        <Position>Tester</Position>
+    </Employee>
+    <Employee>
+        <Name>Alice Doe</Name>
+        <Age>26</Age>
+        <Position>QA Engineer</Position>
+    </Employee>
+</Employees>
+............................................................................
+# q-17 what do you mean by an excepƟon?how is an excepƟon different from 
+an error?what are the keyword used in excepƟon handling?write a 
+programme to show the use of excepƟon handling
+
+Exception is an event that interrupts the normal flow of the program. It occurs when a program tries to perform an illegal operation or encounters an unexpected situation. An exception is different from an error in that an exception is an event that can be handled, while an error is an indication that a problem has occurred, and it cannot be handled.
+
+The keywords used in exception handling are try, catch, finally, throw, and throws.
+
+Below is an example program illustrating the use of exception handling: 
+
+public class ExceptionTest {
+   public static void main(String[] args) {
+      try {
+         int num1 = 30, num2 = 0;
+         int output = num1/num2;
+         System.out.println ("Result: " + output);
+      } catch(ArithmeticException e) {
+         System.out.println ("You can't divide a number by zero!");
+      }
+   }
+}
+........................................................................
+develop an applicaƟon in php that displays the data in the database on 
+the browser?
+
+Below is an example of how you can develop an application in PHP that displays the data in the database on the browser.
+
+1. Connect to the database:
+First, you will need to connect to the database. This can be done using the PHP function mysqli_connect(). This function takes in three parameters: the database host name, username, and password. Example:
+
+$conn = mysqli_connect('hostname', 'username', 'password');
+
+2. Execute a query:
+Once the connection to the database is established, you can now execute queries to retrieve data from the database. This can be done using the PHP function mysqli_query(). This function takes in two parameters: the connection and the SQL query. Example:
+
+$result = mysqli_query($conn, 'SELECT * FROM table_name');
+
+3. Fetch the data:
+Once the query is executed, you can now fetch the data. This can be done using the PHP function mysqli_fetch_assoc(). This function takes in one parameter: the result of the query. Example:
+
+$data = mysqli_fetch_assoc($result);
+
+4. Display the data:
+Once the data is fetched, you can now display it on the browser. This can be done using the PHP function echo(). This function takes in one parameter: the data. Example:
+
+echo '<pre>';
+print_r($data);
+echo '</pre>';
+
+You can also use an HTML table to display the data. For example:
+
+echo '<table>';
+echo '<tr>';
+echo '<th>ID</th>';
+echo '<th>Name</th>';
+echo '</tr>';
+
+while($row = mysqli_fetch_assoc($result)) {
+    echo '<tr>';
+    echo '<td>'.$row['id'].'</td>';
+    echo '<td>'.$row['name'].'</td>';
+    echo '</tr>';
+}
+
+echo '</table>';

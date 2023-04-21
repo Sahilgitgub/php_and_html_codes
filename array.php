@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>
+</title>
+</head>
+<body>
+<?php
+for($i=0;$i<8;$i++)
+{
+	echo(13+($i*$i)."<br>");
+}
+?>
+</body>
+</html> 

@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Smallest of three numbers</title>
+  </head>
+  <body>
+    <h1>Smallest of three numbers</h1>
+    Enter three numbers: 
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <input type="text" id="num3">
+    <button onclick="smallest()">Find the smallest number</button>
+    <p id="result"></p>
+    <script>
+      function smallest(){
+        let num1 = parseInt(document.getElementById('num1').value);
+        let num2 = parseInt(document.getElementById('num2').value);
+        let num3 = parseInt(document.getElementById('num3').value);
+        let smallest = 0;
+        if(num1 < num2 && num1 < num3){
+            smallest = num1;
+        }
+        else if(num2 < num1 && num2 < num3){
+            smallest = num2;
+        }
+        else{
+            smallest = num3;
+        }
+        document.getElementById('result').innerHTML = "The smallest number is: " + smallest;
+      }
+    </script>
+  </body>
+</html>
